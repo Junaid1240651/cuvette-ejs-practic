@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Edit Recipe</h1>
+    <div class="add-recipe-form
+
+    ">
+
+        <form action="/<%= recipe._id %>/edit" method="post">
+            <label for="">Name</label>
+            <input type="text" name="recipeName">
+            <label for="">Description</label>
+            <input type="text" name="description">
+            <label for="">Ingredients</label>
+            <input type="text" name="ingredients">
+            <label for="">Steps</label>
+            <input name="steps"></input>
+            <button type="submit">Edit Recipe</button>
+
+        </form>
+    </div>
+</body>
+
+</html>

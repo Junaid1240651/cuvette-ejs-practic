@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div>
+
+            <form action="/addRecipe" class="create-recipes">
+                <button class="body-button">Add Recipes</button>
+            </form>
+        </div>
+
+        <div>
+
+            <% recipes.forEach((recipe)=> { %>
+                <div>
+                    <div>
+                        <img class="recipe-image" src="/uploads/<%=recipe.img%>" alt="image">
+
+
+                        <h3>Recipe Name</h3>
+                        <p>
+                            <%= recipe.name %>
+                        </p>
+                        <h3>Recipe description</h3>
+                        <p>
+                            <%= recipe.description %>
+                        </p>
+                    </div>
+                    <div class="box2">
+                        <h3>Ingredients</h3>
+                        <p>
+                            <%= recipe.ingredients %>
+                        </p>
+                    </div>
+                    <div class="box3">
+                        <h3>Steps </h3>
+                        <p>
+                            <%= recipe.steps %>
+                        </p>
+                    </div>
+                    <form action="/<%=recipe._id%>/edit">
+
+                        <button>Modify</button>
+                    </form>
+                    <form action="/<%= recipe._id %>/delete" method="post">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+                <% }); %>
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>
